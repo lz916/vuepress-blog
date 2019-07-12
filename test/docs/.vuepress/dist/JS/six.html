@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>liaozhen&#96;S Blog</title>
+    <meta name="description" content="快乐工作，认真生活">
+    <link rel="icon" href="/logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.5e739af7.css" as="style"><link rel="preload" href="/assets/js/app.15200875.js" as="script"><link rel="preload" href="/assets/js/2.fb205d9f.js" as="script"><link rel="preload" href="/assets/js/19.c54ed300.js" as="script"><link rel="prefetch" href="/assets/js/10.29dee4d3.js"><link rel="prefetch" href="/assets/js/11.c3558308.js"><link rel="prefetch" href="/assets/js/12.7a63f9a3.js"><link rel="prefetch" href="/assets/js/13.f4a1c39b.js"><link rel="prefetch" href="/assets/js/14.38ad3ff8.js"><link rel="prefetch" href="/assets/js/15.975b4171.js"><link rel="prefetch" href="/assets/js/16.7219c837.js"><link rel="prefetch" href="/assets/js/17.969e7c28.js"><link rel="prefetch" href="/assets/js/18.baab46b9.js"><link rel="prefetch" href="/assets/js/20.685e9f1e.js"><link rel="prefetch" href="/assets/js/21.8a283caf.js"><link rel="prefetch" href="/assets/js/22.c880ebe0.js"><link rel="prefetch" href="/assets/js/23.c04bfe6d.js"><link rel="prefetch" href="/assets/js/24.3343baf2.js"><link rel="prefetch" href="/assets/js/3.82ecd589.js"><link rel="prefetch" href="/assets/js/4.4e2487f6.js"><link rel="prefetch" href="/assets/js/5.0c9c877b.js"><link rel="prefetch" href="/assets/js/6.ee92ed28.js"><link rel="prefetch" href="/assets/js/7.8b5f0720.js"><link rel="prefetch" href="/assets/js/8.02a79070.js"><link rel="prefetch" href="/assets/js/9.a3925f0d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5e739af7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">liaozhen`S Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/HTML/" class="nav-link">HTML</a></div><div class="nav-item"><a href="/CSS/" class="nav-link">CSSs</a></div><div class="nav-item"><a href="/JS/" class="nav-link router-link-active">JS</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/HTML/" class="nav-link">HTML</a></div><div class="nav-item"><a href="/CSS/" class="nav-link">CSSs</a></div><div class="nav-item"><a href="/JS/" class="nav-link router-link-active">JS</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/JS/" class="sidebar-link">JS首页</a></li><li><a href="/JS/one.html" class="sidebar-link">内存空间</a></li><li><a href="/JS/two.html" class="sidebar-link">变量对象</a></li><li><a href="/JS/three.html" class="sidebar-link">执行上下文</a></li><li><a href="/JS/four.html" class="sidebar-link">数据类型判断</a></li><li><a href="/JS/five.html" class="sidebar-link">隐式类型转换</a></li><li><a href="/JS/six.html" class="active sidebar-link">new的模拟实现</a></li><li><a href="/JS/seven.html" class="sidebar-link">call和apply的模拟实现</a></li><li><a href="/JS/eight.html" class="sidebar-link">数组去重</a></li><li><a href="/JS/nine.html" class="sidebar-link">深浅拷贝</a></li><li><a href="/JS/ten.html" class="sidebar-link">es6的应用</a></li><li><a href="/JS/eleven.html" class="sidebar-link">作用域链</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><ul><li><p>new有什么作用？我们先看一个例子：</p> <pre><code>  function Person(name, age) {
+      this.name = name
+      this.age = age
+  }
+  Person.prototype.strength = 60
+  let person = new Person('liaozhen', 24)
+  console.log(person.name)
+  console.log(person.age)
+  console.log(person.strength)
+</code></pre></li></ul> <p>从这个例子中我们可以看出，实例person:</p> <ul><li>可以访问到构造函数Person里面的属性</li> <li>可以访问到构造函数Person原型上的属性</li></ul> <p>接下来我们来模拟实现一下new的实现，写一个函数来模拟new的实现：</p> <pre><code>    function objectFactory() {
+        let obj = new Object()
+        Constructor = [].shift.call(arguments) // 取出arguments的第一个值
+        obj.__proto__ = Constructor.prototype // 让obj的原型指向Constructor的原型，使得obj可以访问到Constructor原型上的属性
+        Constructor.apply(obj, arguments) //使得obj可以访问到构造函数上的属性
+        return obj
+    }
+    
+    objectFactory(Person, 'liaozhen', 24) //返回的结果和上面那个例子是一样的。
+</code></pre></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/JS/five.html" class="prev">
+          隐式类型转换
+        </a></span> <span class="next"><a href="/JS/seven.html">
+          call和apply的模拟实现
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.15200875.js" defer></script><script src="/assets/js/2.fb205d9f.js" defer></script><script src="/assets/js/19.c54ed300.js" defer></script>
+  </body>
+</html>

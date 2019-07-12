@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "@vuepress/theme-default": "^1.0.0-rc.1"
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.2"
+  }
+}

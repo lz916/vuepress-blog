@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>liaozhen&#96;S Blog</title>
+    <meta name="description" content="快乐工作，认真生活">
+    <link rel="icon" href="/logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.5e739af7.css" as="style"><link rel="preload" href="/assets/js/app.15200875.js" as="script"><link rel="preload" href="/assets/js/2.fb205d9f.js" as="script"><link rel="preload" href="/assets/js/16.7219c837.js" as="script"><link rel="prefetch" href="/assets/js/10.29dee4d3.js"><link rel="prefetch" href="/assets/js/11.c3558308.js"><link rel="prefetch" href="/assets/js/12.7a63f9a3.js"><link rel="prefetch" href="/assets/js/13.f4a1c39b.js"><link rel="prefetch" href="/assets/js/14.38ad3ff8.js"><link rel="prefetch" href="/assets/js/15.975b4171.js"><link rel="prefetch" href="/assets/js/17.969e7c28.js"><link rel="prefetch" href="/assets/js/18.baab46b9.js"><link rel="prefetch" href="/assets/js/19.c54ed300.js"><link rel="prefetch" href="/assets/js/20.685e9f1e.js"><link rel="prefetch" href="/assets/js/21.8a283caf.js"><link rel="prefetch" href="/assets/js/22.c880ebe0.js"><link rel="prefetch" href="/assets/js/23.c04bfe6d.js"><link rel="prefetch" href="/assets/js/24.3343baf2.js"><link rel="prefetch" href="/assets/js/3.82ecd589.js"><link rel="prefetch" href="/assets/js/4.4e2487f6.js"><link rel="prefetch" href="/assets/js/5.0c9c877b.js"><link rel="prefetch" href="/assets/js/6.ee92ed28.js"><link rel="prefetch" href="/assets/js/7.8b5f0720.js"><link rel="prefetch" href="/assets/js/8.02a79070.js"><link rel="prefetch" href="/assets/js/9.a3925f0d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5e739af7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">liaozhen`S Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/HTML/" class="nav-link">HTML</a></div><div class="nav-item"><a href="/CSS/" class="nav-link">CSSs</a></div><div class="nav-item"><a href="/JS/" class="nav-link router-link-active">JS</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/HTML/" class="nav-link">HTML</a></div><div class="nav-item"><a href="/CSS/" class="nav-link">CSSs</a></div><div class="nav-item"><a href="/JS/" class="nav-link router-link-active">JS</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/JS/" class="sidebar-link">JS首页</a></li><li><a href="/JS/one.html" class="sidebar-link">内存空间</a></li><li><a href="/JS/two.html" class="sidebar-link">变量对象</a></li><li><a href="/JS/three.html" class="sidebar-link">执行上下文</a></li><li><a href="/JS/four.html" class="sidebar-link">数据类型判断</a></li><li><a href="/JS/five.html" class="sidebar-link">隐式类型转换</a></li><li><a href="/JS/six.html" class="sidebar-link">new的模拟实现</a></li><li><a href="/JS/seven.html" class="sidebar-link">call和apply的模拟实现</a></li><li><a href="/JS/eight.html" class="sidebar-link">数组去重</a></li><li><a href="/JS/nine.html" class="active sidebar-link">深浅拷贝</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/JS/ten.html" class="sidebar-link">es6的应用</a></li><li><a href="/JS/eleven.html" class="sidebar-link">作用域链</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p>js的深浅拷贝需要从js的数据类型说起：</p> <h3 id="js的数据类型"><a href="#js的数据类型" aria-hidden="true" class="header-anchor">#</a> js的数据类型</h3> <ul><li>基本数据类型： undifined、null、number、string、boolean、symbol(es6总新增)</li> <li>复制数据类型：object</li></ul> <h3 id="简单数据类型和复杂数据类型的区别"><a href="#简单数据类型和复杂数据类型的区别" aria-hidden="true" class="header-anchor">#</a> 简单数据类型和复杂数据类型的区别</h3> <ul><li>在内存中的存储方式：
+（1）简单数据类型占据了内存的固定大小，存储在栈内存中。当一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本
+（2）复制数据类型及引用数据类型，它的值是对象，存储在堆内存中，包含引用类型的值的并不是对象本身，而是对象所指向的指针。从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两个变量最终都指向同一个对象。</li></ul> <p>知道了基本数据类型和复制数据类型的区别，也就知道为什么会有浅拷贝和深拷贝之分了。我们来看下面这个列子。</p> <pre><code>var a = 1
+var b = a
+b = 2
+console.log(a) // 1
+console.log(b) // 2
+</code></pre> <p>在这个列子中，a,b都是基本数据类型，把a的复制给b,b就是a的一个副本，他们两占有不同位置的内存空间，所以修改b的值，不会改变a的值。</p> <p>下面我们再看一个关于复制数据类型赋值的例子：</p> <pre><code>var a = {
+    name: 'liaozhen',
+    age: 24
+}
+var b = a
+b.age = 25
+console.log(a) // {name: 'liaozhen', age: 25}
+console.log(b) // {name: 'liaozhen', age}
+</code></pre> <p><img src="https://leanote.com/api/file/getImage?fileId=5ac86e04ab64417bf7000ab7" alt="title">
+我们发现改变b中的age,a中的age也改变了，那是因为a,b都是引用类型，他们指向同一个内存地址。其实这一段就是一个浅拷贝的过程。有时候我们只是想备份数组，但是只是简单让它赋给一个变量，改变其中一个，另外一个就紧跟着改变，但很多时候这不是我们想要的。于是深拷贝就出现了。</p> <h3 id="深拷贝（让两个对象不指向同一个内存地址）"><a href="#深拷贝（让两个对象不指向同一个内存地址）" aria-hidden="true" class="header-anchor">#</a> 深拷贝（让两个对象不指向同一个内存地址）</h3> <p>先列举出一些深拷贝的方法，我们一起来探讨：</p> <ul><li><p>利用JSON.parse和JSON.stringify
+先看下面这段代码：</p> <pre><code> var a = {
+     name: 'liaozhen',
+     age: 24
+  }
+ var b = JSON.parse(JSON.stringify(a))
+ b.age = 25
+ console.log(a) // {name: 'liaozhen', age: 24}
+ console.log(b) // {name: 'liaozhen', age: 25}
+</code></pre></li></ul> <p><img src="https://leanote.com/api/file/getImage?fileId=5ac870daab64417a09000b34" alt="title">
+我们发现改变b中的age,a中的age并没有改变，这就是一个深拷贝，因为利用JSON.parse的时候他会为每个对象开辟一个新的空间。
+但是这种方法只适用于对象中不存在函数的情况下，我们看下面这个例子：</p> <pre><code>var a = {
+    name: 'liaozhen',
+    say: function() {
+        console.log('my name is liaozhen')
+    } 
+}
+var b = JSON.parse(JSON.stringify(a))
+console.log(a) //  {name: 'liaozhen', say: }
+console.log(b) // {name: 'liaozhen'}
+</code></pre> <p><img src="https://leanote.com/api/file/getImage?fileId=5ac8758aab64417a09000b93" alt="title">
+我们发现b没有拷贝进来a中的函数，所以这个方法只适合用在对象中没有函数的场景。</p> <ul><li><p>数组的深拷贝可以用slice和concat方法（这两种方法不会改变原数组）</p> <pre><code>  var a = [1, 2, 3]
+  var b = a.concat()
+  b[0] = 4
+  console.log(a) // [1, 2, 3]
+  console.log(b) // [4, 2, 3]
+  var c = a.slice(0)
+  c[0] = 4
+  console.log(a) // [1, 2, 3]
+  console.log(b) // [4, 2, 3]
+</code></pre></li></ul> <p>数组的这两个方法可以实现数组的深拷贝，但是这种方法只适用于数组中的值是基本数据类型的。</p> <ul><li><p>对象的深拷贝（封装一个方法）</p> <pre><code>  function deepCopy(obj) {
+      var result = {}
+      for (key in obj) {
+          if (typeof obj[key] === 'object') {
+             result[key] = deepCope(obj[key])
+          } else {
+            result[key] = obj[key]
+          }
+      }
+     return result
+  }
+  var a = {
+      name: 'liaozhen',
+      info: {
+          age: 24,
+          sex: '女'
+      }
+  }
+  var b = deepCopy(a)
+  b.name = '廖珍'
+  console.log(a)
+  console.log(b)
+</code></pre></li></ul> <p>这里封装了一个对象的深拷贝方法。但是这个方法只适用于对象的深拷贝，并不适用用数组的深拷贝，下面我们封装一个适用于对象和数组通用的深拷贝方法。</p> <pre><code>    function deepCope(source) {
+         let obj = null
+         for (key in source) {
+             if (source.hasOwnProperty(key)) {
+                 if (typeof source[key] === 'null') {
+                     obj[key] = null
+                 } else if (Object.prototype.toString.call(obj[key] === '[Object Arry]')) {
+                    obj[key]=[];
+                    for(var i=0;i&lt;this[attr].length;i++){
+                        obj[key].push(source[key][i].deepCopy());
+                    }
+                 } else {
+                     obj[key] =  deepCope(source[key])
+                 }
+              }
+         }
+    }</code></pre></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/JS/eight.html" class="prev">
+          数组去重
+        </a></span> <span class="next"><a href="/JS/ten.html">
+          es6的应用
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.15200875.js" defer></script><script src="/assets/js/2.fb205d9f.js" defer></script><script src="/assets/js/16.7219c837.js" defer></script>
+  </body>
+</html>

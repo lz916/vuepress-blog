@@ -18,7 +18,7 @@ module.exports = {
               ['tow', 'html1']  /* /foo/two.html */
             ],
             '/CSS/': [
-                ['', '首页'],     /* /foo/ */
+                ['one', 'BFC及其应用'],     /* /foo/ */
                 ['one', 'css'],  /* /foo/one.html */
                 ['tow', 'css1']   /* /bar/four.html */
             ],
@@ -34,6 +34,7 @@ module.exports = {
                 ['nine', '深浅拷贝'],
                 ['ten', 'new的模拟实现'],
                 ['eleven', 'call和apply的模拟实现'],
+                ['thirteen', '数组去重']
             ]
         }
     },

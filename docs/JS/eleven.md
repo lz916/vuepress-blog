@@ -8,7 +8,6 @@
 >apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。
 ### call和apply的区别
 共同点：
-<<<<<<< HEAD
 函数调用call和apply,更改函数this的指向。
 不同点：
 传参方式不同。apply传参是传数组。
@@ -70,6 +69,3 @@ function bar(name, age) {
 bar.call1(foo, 'liaozhen', 25) // 'liaozhen', 25, 1
 ```
 至此，call的模拟实现已完成。apply的模拟实现，只是传参不同。
-=======
-函数调用call和apply。通过
->>>>>>> eaa7fcd95f83ff96404c6b5032d2a1f9d2b051a3

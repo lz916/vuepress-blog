@@ -10,9 +10,12 @@ module.exports = {
             { text: 'HTML', link: '/HTML/' },
             { text: 'CSSs', link: '/CSS/' },
             { text: 'JS', link: '/JS/' },
+<<<<<<< HEAD
             {
                 text: 'Vue', link: '/Vue/'
             }
+=======
+>>>>>>> eaa7fcd95f83ff96404c6b5032d2a1f9d2b051a3
         ],
         sidebar: {
             '/HTML/': [
@@ -21,7 +24,11 @@ module.exports = {
               ['tow', 'html1']  /* /foo/two.html */
             ],
             '/CSS/': [
+<<<<<<< HEAD
                 ['', '首页'],     /* /foo/ */
+=======
+                ['one', 'BFC及其应用'],     /* /foo/ */
+>>>>>>> eaa7fcd95f83ff96404c6b5032d2a1f9d2b051a3
                 ['one', 'css'],  /* /foo/one.html */
                 ['tow', 'css1']   /* /bar/four.html */
             ],
@@ -37,8 +44,12 @@ module.exports = {
                 ['nine', '深浅拷贝'],
                 ['ten', 'new的模拟实现'],
                 ['eleven', 'call和apply的模拟实现'],
+<<<<<<< HEAD
                 ['thirteen', '数组去重'],
                 ['fourteen', '防抖和节流']
+=======
+                ['thirteen', '数组去重']
+>>>>>>> eaa7fcd95f83ff96404c6b5032d2a1f9d2b051a3
             ]
         }
     },

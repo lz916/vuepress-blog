@@ -1,6 +1,6 @@
 # CSS布局
 
-### 两栏布局
+## 两栏布局
 
 1. float + margin
 
@@ -107,4 +107,83 @@
 ```
 效果图：
 ![title](../../docs/.vuepress/public/images/css-three1.png)
+
+## 三栏布局
+1. 圣杯布局
+```html
+    <div class="parent">
+        <div class="main">main</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+```
+
+```css
+    .parent {
+        padding: 0 200px;
+        height: 500px;
+    }
+    .main {
+        float: left;
+        width: 100%;
+        background-color: #ddd;
+        height: 500px;
+    }
+    .left {
+        float: left;
+        width: 200px;
+        background-color: red;
+        height: 500px;
+        margin-left: -100%;
+        position: relative;
+        left: -200px;
+    }
+    .right {
+        float: left;
+        width: 200px;
+        background-color: yellow;
+        height: 500px;
+        margin-left: -200px;
+        position: relative;
+        position: relative;
+        left: 200px;
+    }
+```
+
+2. 双飞翼布局
+```html
+<div class="parent">
+        <div class="main">
+            <div class="main-content"></div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">main</div>
+    </div>
+```
+```css
+    .main {
+        float: left;
+        width: 100%;
+        background: #ddd;
+        height: 500px;
+    }
+    .main-content {
+        margin: 0 200px;
+        height: 500px;
+    }
+    .left {
+        float: left;
+        width: 200px;
+        margin-left: -100%;
+        background: red;
+        height: 500px;
+    }
+    .right {
+        float: left;
+        width: 200px;
+        margin-left: -200px;
+        background-color: yellow;
+        height: 500px;
+    }
+```
 

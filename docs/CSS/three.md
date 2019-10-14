@@ -90,20 +90,20 @@
 ```
 
 ```css
-     .parent {
-            display: flex;
-        }
-        .left {
-            width: 100px;
-            height: 500px;
-            background: yellow;
-            margin-right: 10px;
-        }
-        .right {
-            flex: 1;
-            background: red;
-            height: 500px;
-        }
+    .parent {
+        display: flex;
+    }
+    .left {
+        width: 100px;
+        height: 500px;
+        background: yellow;
+        margin-right: 10px;
+    }
+    .right {
+        flex: 1;
+        background: red;
+        height: 500px;
+    }
 ```
 效果图：
 ![title](../../docs/.vuepress/public/images/css-three1.png)

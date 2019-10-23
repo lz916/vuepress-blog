@@ -19,7 +19,12 @@
         }
     })
 ```
+
 Promise接受一个函数作为参数，该函数的两个参数分别是resolve, reject。resole和reject是两个函数，由javascript引擎部署，不需要自己部署。
+
+:::danger
+    Promise新建之后会立即执行
+:::
 
 ### Promise的状态
  * pending：异步任务正在执行
@@ -50,4 +55,150 @@ Promise接受一个函数作为参数，该函数的两个参数分别是resolve
         error => console.log(error)
     )
  ```
+ :::danger
+ promise新建后会立即执行，但是then方法指定的回调函数会在当前脚本中所有的同步任务执行完才会执行
+ :::
+
+ 1、如果resolve和reject执行的时候带有参数，参数会传递给then注册的回调函数
+
+ ```javascript
+    const promise = new Promise((resolve, reject) => {
+        resolve('resolve')
+    })
+    promise.then((value) => console.log(value)) // 输出resolve
+ ```
+
+ 2、当resolve的参数是一个Promise实例时，之前的Promise的状态由参数的Promise状态决定
+
+ ```javascript
+    const promise1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject('我的状态变为reject了')
+        }, 2000)
+    })
+
+    const promise2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(promise1)
+        }, 1000)
+    })
+
+    promise2.then((value) => {
+        console.log(value)
+    }).catch(err => {
+        console.log(err)
+    })
+ ```
+promise2中resolve了promise1实例，所以promise2的状态由promise1决定，promise1 2s后reject,所以promise2的状态也是rejected，最后执行catch
+
+3、链式调用，then方法返回的是一个新的Promise实例，不是原来那个，所以可以链式调用。
+
+```javascript
+    // 例1
+    const promise1 = new Promise((resolve, reject) => {
+        resolve('执行成功')
+    })
+
+    promise1.then(value => console.log(value))
+            .then(() => {
+                console.log(1)
+            })
+    
+    const promise2 = new Promise((resolve, reject) => {
+        resolve('执行成功')
+    })
+
+    // 例2
+    promise2.then((value) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('再次执行成功')
+            }, 2000)
+        })
+    }).then((value) => {
+        console.log(value) // 再次执行成功
+    })
+```
+* 当执行完then方法后，then方法里面没有return出来一个Promise实例，那么then方法访问的返回一个状态为resolve的Promise实例，链式调用后面的then方法会立即执行。（如例1）
+
+* 当执行完then方法后，then方法里面有return出来一个新的Promise实例，那么then方法返回的是return出来的这个Promise实例，链式调用后面的then方法的执行会根据返回出来的Promise实例状态来执行。（如例2）
+
+* Promise.prototype.catch
+ 
+ Promise.prototye.catch用于指定发生错误时的回调函数。等同于Promise.prototype.then(null, rejection)和Promise.prototype.then(undefined, rejection)
+
+ :::danger
+    Promise 对象的错误具有“冒泡”性质，会一直向后传递，直到被捕获为止。也就是说，错误总是会被下一个catch语句捕获。
+ :::
+
+ ```javascript
+   const promise = new Promise((resolve, reject) => {
+       resolve()
+   })
+
+   promise.then(() => {
+
+   }).then(() => {
+
+   }).catch(() => {
+       // 捕捉前面3个Promise产生的错误
+   })
+ ```
+* Promise.prototype.finally
+
+finally用于不管Promise最后的状态如何，都会执行的操作，回调函数中不接受任何参数
+
+```javascript
+    const promise = new Promise((resolve, reject) => {
+
+    })
+
+    promise.then()
+           .catch()
+           .finally()
+```
+* Promise.all()
+Promise.all用于将多个Promise实例生产一个Promise实例，接收的参数是一个数组，数组里面的值都是Promise实例，如果不是Promise实例，则调用Promise.resolve变成Promise。
+
+生产的新的实例的状态由传入的数组的每个Promise实例状态共同决定，有一下规则：
+
+* 当所有实例状态为fulfilled时，新的实例才为fulfilled，数组里面的各个实例的返回值组成一个数组，传给新实例的回调函数
+* 当数组中有一个被reject了，则新的Promise的状态就变成了rejected状态，被reject的那个实例的返回值，传给新实例的回调函数
+
+```javascript
+    const p1 = new Promise((resolve, reject) => {
+        resolve('p1执行成功')
+    })
+
+    const p2 = new Promise((resolve, reject) => {
+        resolve('p2执行成功')
+    })
+
+    const p3 = new Promise((resolve, reject) => {
+        resolve('p3执行成功')
+    })
+
+    const p = Promise.all([p1, p2, p3]).then(value => console.log(value)) // ["p1执行成功", "p2执行成功", "p3执行成功"]
+```
+在上例中，p的状态由p1, p2, p3共同决定，p1, p2, p3的状态都为fullfilled，所以p的状态也为fullfilled，然后p执行then回调函数，回调函数的值为p1,p2,p3的返回值组成的数值
+
+
+```javascript
+    const p1 = new Promise((resolve, reject) => {
+        resolve('p1执行成功')
+    })
+
+    const p2 = new Promise((resolve, reject) => {
+        reject('p2执行失败')
+    })
+
+    const p3 = new Promise((resolve, reject) => {
+        resolve('p3执行成功')
+    })
+
+     const p = Promise.all([p1, p2, p3]).then(value => console.log(value))
+                                        .catch(error => console.log(error)) // p2执行失败
+```
+在上例中，p的状态由p1, p2, p3共同决定， p2的状态都为rejected，所以p的状态也为rejected，然后p执行catch回调函数，回调函数的值为p2的值
+
 

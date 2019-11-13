@@ -250,4 +250,47 @@ Promise.reject返回一个状态为rejected的Promise实例
 
 ## Promise的模拟实现
 
+平常我们都是用如下的方式生成一个Promise实例
+```javascript
+    const promise = new Promise((resolve, reject) => {
+        resolve(4)
+    })
+```
+因此我们先定义一个Promise构造函数
+
+```javascript
+    function Promise(executor) {
+        const self = this
+        self.status = 'pending'
+        self.value = undefined
+        self.onResolveCallback = []
+        sel.onRejectCallback = []
+        executor(resolve, reject)
+
+        function resolve(value) {
+            if (self.status === 'pending') {
+                self.status = 'fullfilled'
+                self.value = value
+                self.onResolveCallback.forEach(callback => callback(value))
+            }
+        }
+
+        function reject(reason) {
+            if (self.status === 'pending') {
+                self.status = 'rejected'
+                self.value = reason
+                self.onRejectCallback.forEach(callback => callback(reason))
+            }
+        }
+
+        try {
+            executor(resolve, reject)
+        } catch(e) {
+            reject(e)
+        }
+    }
+```
+
+* then方法
+
 

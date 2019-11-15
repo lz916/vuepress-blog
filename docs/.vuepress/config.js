@@ -39,7 +39,8 @@ module.exports = {
                 ['eleven', 'call和apply的模拟实现'],
                 ['thirteen', '数组去重'],
                 ['fourteen', '防抖和节流'],
-                ['fifteen', 'Set和Map']
+                ['fifteen', 'Set和Map'],
+                ['sixteen', 'Promise']
             ]
         }
     },

@@ -23,7 +23,8 @@ module.exports = {
             '/CSS/': [
                 ['one', 'BFC及其应用'],     /* /foo/ */
                 ['tow', '层叠上下文'],  /* /foo/one.html */
-                ['three', 'CSS布局']   /* /bar/four.html */
+                ['three', 'CSS布局'],
+                ['four', '重绘和回流']   /* /bar/four.html */
             ],
             '/JS/': [
                 ['one', '内存空间'],

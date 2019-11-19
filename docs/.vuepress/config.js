@@ -41,7 +41,9 @@ module.exports = {
                 ['thirteen', '数组去重'],
                 ['fourteen', '防抖和节流'],
                 ['fifteen', 'Set和Map'],
-                ['sixteen', 'Promise']
+                ['sixteen', 'Promise'],
+                ['eighteen', 'JS中获取元素宽高和位置各属性的区别'],
+                ['nineteen',  'async和await']
             ]
         }
     },

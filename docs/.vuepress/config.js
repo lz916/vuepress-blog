@@ -43,7 +43,8 @@ module.exports = {
                 ['fifteen', 'Set和Map'],
                 ['sixteen', 'Promise'],
                 ['eighteen', 'JS中获取元素宽高和位置各属性的区别'],
-                ['nineteen',  'async和await']
+                ['nineteen',  'async和await'],
+                ['twenty', 'JS数组方法总结']
             ]
         }
     },

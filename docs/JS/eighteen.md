@@ -57,6 +57,20 @@ offsetWidth表示元素内容的高度，包括height+padding+border
 ```
 
 ### clientX、clientY
+当前事件被触发时鼠标位置针对于浏览器窗口（浏览器可视区域）的X、y轴距离，不会随着滚动条而改变
+
+:::danger
+我们通常所说的可视区不包括工具栏和滚动条
+:::
+
+### offsetX、offsetY
+触发点相对于触发dom的x、y轴距离
+
+### pageX、pageY
+触发点相对于文档区域的X和Y轴距离，会随着滚动条而改变。
+
+### scrollX、scrollY
+触发点相对于屏幕显示器的X和Y轴距离
 
 
 

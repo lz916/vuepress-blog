@@ -10,12 +10,10 @@ module.exports = {
             { text: 'HTML', link: '/HTML/' },
             { text: 'CSS', link: '/CSS/' },
             { text: 'JS', link: '/JS/' },
-            {
-                text: 'Vue', link: '/Vue/'
-            },
-            {
-                text: 'Other', link: '/Other/'
-            }
+            // {
+            //     text: 'Vue', link: '/Vue/'
+            // },
+            { text: 'JS', link: '/Other/' },
         ],
         sidebar: {
             '/HTML/': [
@@ -48,8 +46,6 @@ module.exports = {
                 ['eighteen', 'JS中获取元素宽高和位置各属性的区别'],
                 ['nineteen',  'async和await'],
                 ['twenty', 'JS数组方法总结'],
-                ['twentyOne', 'JS设计模式'],
-                ['twentyTwo', 'promise的设计与实现']
             ],
             '/Other/': [
                 ['one', 'eslint和prettier格式化在项目中的使用']

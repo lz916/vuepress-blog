@@ -8,10 +8,13 @@ module.exports = {
     themeConfig: {
         nav: [
             { text: 'HTML', link: '/HTML/' },
-            { text: 'CSSs', link: '/CSS/' },
+            { text: 'CSS', link: '/CSS/' },
             { text: 'JS', link: '/JS/' },
             {
                 text: 'Vue', link: '/Vue/'
+            },
+            {
+                text: 'Other', link: '/Other/'
             }
         ],
         sidebar: {
@@ -47,6 +50,9 @@ module.exports = {
                 ['twenty', 'JS数组方法总结'],
                 ['twentyOne', 'JS设计模式'],
                 ['twentyTwo', 'promise的设计与实现']
+            ],
+            '/Other/': [
+                ['one', 'eslint和prettier格式化在项目中的使用']
             ]
         }
     },

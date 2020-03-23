@@ -13,7 +13,7 @@ module.exports = {
             // {
             //     text: 'Vue', link: '/Vue/'
             // },
-            { text: 'JS', link: '/Other/' },
+            { text: 'Other', link: '/Other/' },
         ],
         sidebar: {
             '/HTML/': [
@@ -48,7 +48,8 @@ module.exports = {
                 ['twenty', 'JS数组方法总结'],
             ],
             '/Other/': [
-                ['one', 'eslint和prettier格式化在项目中的使用']
+                ['one', 'eslint和prettier格式化在项目中的使用'],
+                ['two', '移动端适配']
             ]
         }
     },

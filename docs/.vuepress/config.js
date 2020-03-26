@@ -10,9 +10,9 @@ module.exports = {
             { text: 'HTML', link: '/HTML/' },
             { text: 'CSS', link: '/CSS/' },
             { text: 'JS', link: '/JS/' },
-            // {
-            //     text: 'Vue', link: '/Vue/'
-            // },
+            {
+                text: 'Vue', link: '/VUE/'
+            },
             { text: 'Other', link: '/Other/' },
         ],
         sidebar: {
@@ -26,6 +26,9 @@ module.exports = {
                 ['tow', '层叠上下文'],  /* /foo/one.html */
                 ['three', 'CSS布局'],
                 ['four', '重绘和回流']   /* /bar/four.html */
+            ],
+            '/VUE/': [
+                ['one', 'vue内部实现概览']
             ],
             '/JS/': [
                 ['one', '内存空间'],

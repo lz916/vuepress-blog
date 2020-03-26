@@ -61,4 +61,8 @@ PPI越高，屏幕和图像更加清晰
 
 ### 淘宝适配方案flexible
 
+### vw、vh方案
+
+更多知识点请移步[关于移动端适配，你必须知道的]('https://juejin.im/post/5cddf289f265da038f77696c')
+
 

@@ -28,7 +28,8 @@ module.exports = {
                 ['four', '重绘和回流']   /* /bar/four.html */
             ],
             '/VUE/': [
-                ['one', 'vue内部实现概览']
+                ['one', 'vue内部实现概览'],
+                ['two', 'Vue响应式原理']
             ],
             '/JS/': [
                 ['one', '内存空间'],

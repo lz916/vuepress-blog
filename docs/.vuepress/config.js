@@ -40,6 +40,7 @@ module.exports = {
                 ['six', 'this的指向'],
                 ['seven', '闭包'],
                 ['eight', '原型和原型链'],
+                ['twentytwo', '继承'],
                 ['nine', '深浅拷贝'],
                 ['ten', 'new的模拟实现'],
                 ['eleven', 'call和apply的模拟实现'],
@@ -50,6 +51,7 @@ module.exports = {
                 ['eighteen', 'JS中获取元素宽高和位置各属性的区别'],
                 ['nineteen',  'async和await'],
                 ['twenty', 'JS数组方法总结'],
+                ['twentyOne', '事件循环机制']
             ],
             '/Other/': [
                 ['one', 'eslint和prettier格式化在项目中的使用'],

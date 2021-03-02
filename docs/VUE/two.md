@@ -47,10 +47,11 @@ function defineReactive(obj, prop, value) {
     Object.defineProperty(obj, prop, {
         configurable: true,
         enumerable: true,
-        get: (getter = value => {
+        get: (getter = () => {
             return value
         }),
-        set: (setter = (value, newValue) => {
+        set: (setter = (newValue) => {
+            value = newValue
             if (value === newValue) return
             cb(newValue) // 此方法在下面
         })
@@ -93,3 +94,4 @@ VM._data.test = '我是修改后的test' // 视图更新啦！
 ```
 
 至此，我们简单的实现了一个简单的 Vue 响应式系统
+

@@ -51,7 +51,8 @@ module.exports = {
                 ['eighteen', 'JS中获取元素宽高和位置各属性的区别'],
                 ['nineteen',  'async和await'],
                 ['twenty', 'JS数组方法总结'],
-                ['twentyOne', '事件循环机制']
+                ['twentyOne', '事件循环机制'],
+                ['twentythree', 'Promise的封装']
             ],
             '/Other/': [
                 ['one', 'eslint和prettier格式化在项目中的使用'],

@@ -52,7 +52,8 @@ module.exports = {
                 ['nineteen',  'async和await'],
                 ['twenty', 'JS数组方法总结'],
                 ['twentyOne', '事件循环机制'],
-                ['twentythree', 'Promise的封装']
+                ['twentythree', 'Promise的封装'],
+                ['twentySix', 'JS一些手写方法'],
             ],
             '/Other/': [
                 ['one', 'eslint和prettier格式化在项目中的使用'],

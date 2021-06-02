@@ -260,7 +260,7 @@ function debounce(func, wait) {
 
 ```js
     class EventBus {
-        private cache = {};
+        private events = {};
 
         on(name, callback) {
             this.events[name] = this.events[name] || [];

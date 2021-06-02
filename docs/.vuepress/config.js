@@ -55,6 +55,9 @@ module.exports = {
                 ['twentythree', 'Promise的封装'],
                 ['twentySix', 'JS一些手写方法'],
             ],
+            '/Network/': [
+                ['one', 'HTTP']
+            ],
             '/Other/': [
                 ['one', 'eslint和prettier格式化在项目中的使用'],
                 ['two', '移动端适配']

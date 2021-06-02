@@ -10,9 +10,9 @@ module.exports = {
             { text: 'HTML', link: '/HTML/' },
             { text: 'CSS', link: '/CSS/' },
             { text: 'JS', link: '/JS/' },
-            // {
-            //     text: 'Vue', link: '/Vue/'
-            // },
+            {
+                text: 'Vue', link: '/VUE/'
+            },
             { text: 'Other', link: '/Other/' },
         ],
         sidebar: {
@@ -27,6 +27,10 @@ module.exports = {
                 ['three', 'CSS布局'],
                 ['four', '重绘和回流']   /* /bar/four.html */
             ],
+            '/VUE/': [
+                ['one', 'vue内部实现概览'],
+                ['two', 'Vue响应式原理']
+            ],
             '/JS/': [
                 ['one', '内存空间'],
                 ['two', '执行上下文'],
@@ -36,6 +40,7 @@ module.exports = {
                 ['six', 'this的指向'],
                 ['seven', '闭包'],
                 ['eight', '原型和原型链'],
+                ['twentytwo', '继承'],
                 ['nine', '深浅拷贝'],
                 ['ten', 'new的模拟实现'],
                 ['eleven', 'call和apply的模拟实现'],
@@ -46,6 +51,12 @@ module.exports = {
                 ['eighteen', 'JS中获取元素宽高和位置各属性的区别'],
                 ['nineteen',  'async和await'],
                 ['twenty', 'JS数组方法总结'],
+                ['twentyOne', '事件循环机制'],
+                ['twentythree', 'Promise的封装'],
+                ['twentySix', 'JS一些手写方法'],
+            ],
+            '/Network/': [
+                ['one', 'HTTP']
             ],
             '/Other/': [
                 ['one', 'eslint和prettier格式化在项目中的使用'],

@@ -35,7 +35,7 @@ bar();
 1. 全局代码执行，globalEcs压入入执行上下文栈中。
 2. 执行foo，fooEcs压入执行上下文栈中。
 3. foo执行完，fooEcs被销毁，fooEcs里面的变量对象也被垃圾回收。
-4. 执行bar，barEcs被压入执行上下文栈中，foo执行上下文进入执行阶段，用到了foo中的变量对象a，b。但是此时fooEcs已经被销毁，所以bar是闭包。
+4. 执行bar，barEcs被压入执行上下文栈中，bar执行上下文进入执行阶段，用到了foo中的变量对象a，b。但是此时fooEcs已经被销毁，所以bar是闭包。
 
 ## 常见闭包题
 ```javascript
@@ -91,7 +91,7 @@ data[2]();
 2. 执行data[0]时，此时data[0]的作用域为：
 ```
     data[0]Context = {
-        Scope: [AO, 匿名函数AO, AO]
+        Scope: [AO, 匿名函数AO, global.AO]
     }
 ```
 data[0]输出i，再其作用域中找i，找到了匿名函数AO中的i为0。
